@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fitness centrum – osobní tréninky, skupinové lekce a bojové sporty. Rezervujte si lekci ještě dnes!">
+  <meta name="keywords" content="fitness centrum, osobní tréninky, skupinové lekce, bojové sporty, rezervace fitness lekce">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph pro sociální sítě -->
+  <meta property="og:title" content="Fitness Centrum Trebesin | Osobní a Skupinové Tréninky">
+  <meta property="og:description" content="Fitness centrum – osobní tréninky, skupinové lekce a bojové sporty. Rezervujte si lekci ještě dnes!">
+  <meta property="og:image" content="fitko.png"> <!-- Nastavte vlastní obrázek -->
+  <meta property="og:url" content="https://www.vasestranka.cz"> <!-- URL vaší stránky -->
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:title" content="Fitness Centrum Trebesin | Osobní a Skupinové Tréninky">
+  <meta name="twitter:description" content="Fitness centrum – osobní tréninky, skupinové lekce a bojové sporty. Rezervujte si lekci ještě dnes!">
+  <meta name="twitter:image" content="fitko.png">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <title>Fitness Centrum Trebesin | Osobní a Skupinové Tréninky</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Domů</a></li>
+        <li><a href="#o-nas">O nás</a></li>
+        <li><a href="sluzby.html">Služby</a></li>
+        <li><a href="treneri.html">Trenéři</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="uvod">
+      <h1>Vítejte ve Fitness Centru Třebešín</h1>
+      <p>Jsme moderní fitness centrum zaměřené na osobní přístup a špičkové vybavení. U nás najdete širokou nabídku tréninků pro každého!</p>
+      <img src="fitko.png" alt="Fitness Centrum Třebešín" class="center-img">
+    </section>
+
+    <section id="o-nas">
+      <h2>O nás</h2>
+      <p>Naše fitness centrum nabízí komplexní služby od silového tréninku po kondiční cvičení. Věříme v individuální přístup a neustálé zlepšování našich klientů.</p>
+    </section>
+
+    <section>
+      <h2>Rezervace Lekce</h2>
+      <form action="vkladani.php" method="post">
+        <label for="jmeno">Jméno:</label>
+        <input type="text" id="jmeno" name="jmeno" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="lekce">Vyberte lekci:</label>
+        <select name="lekce" id="lekce">
+          <option value="silovy">Silový trénink</option>
+          <option value="kondicni">Kondiční trénink</option>
+          <option value="hypertroficky">Hypertrofický trénink</option>
+        </select><br>
+
+        <input type="submit" value="Rezervovat">
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Fitness Centrum Třebešín</p>
+  </footer>
+</body>
+</html>

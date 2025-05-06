@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontaktujte nás pro více informací o našich službách nebo pro rezervaci.">
+  <meta name="keywords" content="kontakt, fitness centrum, informace, rezervace, fitness trenéři, cvičení">
+  <meta name="robots" content="index, follow"> <!-- Informace pro vyhledávače -->
+  <title>Kontakt | Fitness Centrum Trebesin</title>
+
+  <!-- Open Graph pro sociální média -->
+  <meta property="og:title" content="Kontakt | Fitness Centrum Trebesin">
+  <meta property="og:description" content="Kontaktujte nás pro více informací o našich službách nebo pro rezervaci.">
+  <meta property="og:image" content="url_to_your_image.jpg"> <!-- Nastavte vlastní obrázek -->
+  <meta property="og:url" content="https://www.vasestranka.cz/kontakt">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:title" content="Kontakt | Fitness Centrum Trebesin">
+  <meta name="twitter:description" content="Kontaktujte nás pro více informací o našich službách nebo pro rezervaci.">
+  <meta name="twitter:image" content="url_to_your_image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Fitness Centrum Trebesin</h1>
+    <nav>
+      <a href="index.html">Úvod</a>
+      <a href="sluzby.html">Služby</a>
+      <a href="treneri.html">Trenéři</a>
+      <a href="rezervace.html">Rezervace</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Kontaktujte nás</h2>
+    <p>Máte dotazy nebo chcete rezervovat lekci? Napište nám a my se vám co nejdříve ozveme!</p>
+    
+    <form action="submit_contact.php" method="POST">
+      <label for="name">Vaše jméno:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Váš email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Vaše zpráva:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Odeslat</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Fitness Centrum Trebesin</p>
+  </footer>
+</body>
+</html>
