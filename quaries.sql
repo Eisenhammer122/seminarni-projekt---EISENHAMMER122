@@ -1,4 +1,4 @@
--- 1–10: Dotazy s WHERE
+-- 2–11: Dotazy s WHERE
 SELECT * FROM zamestnanci WHERE vek > 40; --vybere vsechny zamestnance s vekem vetsim nez 40
 SELECT * FROM zamestnanci WHERE pohlavi = 'F'; --vybere vsechny zamestnance zeny
 SELECT * FROM zamestnanci WHERE jmeno = 'Tomáš'; --vybere vsechny tomase
@@ -10,7 +10,7 @@ SELECT * FROM zamestnanci WHERE pohlavi != 'F';--vybere vsechny pohlavi krome F
 SELECT * FROM zamestnanci WHERE jmeno IN ('Petra', 'Tereza');--vybere vsechny co maj ve jmene Petra,Tereza
 SELECT * FROM zamestnanci WHERE vek = 42;--vybere vsechny komu je 42
 
--- 11–16: Dotazy s JOIN ON
+-- 14-19: Dotazy s JOIN ON
 SELECT f.jmeno, f.prijmeni, s.nazev FROM fitkari f JOIN skupinovelekce s ON f.skupinovelekce_id = s.id;-- Vybere jméno a příjmení fitkaře a název skupinové lekce, na kterou chodí
 SELECT f.jmeno, f.prijmeni, b.druh FROM fitkari f JOIN bojovesporty b ON f.bojovesporty_id = b.id;-- Vybere jméno a příjmení fitkaře a druh bojového sportu, kterému se věnuje
 SELECT b.druh, z.jmeno, z.prijmeni FROM bojovesporty b JOIN zamestnanci z ON b.trener = CONCAT(z.jmeno, ' ', z.prijmeni);-- Vybere druh bojového sportu a jméno + příjmení trenéra, který ho vede
@@ -18,12 +18,12 @@ SELECT s.nazev, z.jmeno, z.prijmeni FROM skupinovelekce s JOIN zamestnanci z ON 
 SELECT f.jmeno AS fitkar, b.trener FROM fitkari f JOIN bojovesporty b ON f.bojovesporty_id = b.id;-- Vybere jméno fitkaře a jméno trenéra bojového sportu, kterému se fitkař věnuje
 SELECT f.jmeno, f.prijmeni, s.nazev, s.trener FROM fitkari f JOIN skupinovelekce s ON f.skupinovelekce_id = s.id;-- Vybere jméno a příjmení fitkaře, název skupinové lekce a jméno trenéra této lekce
 
--- 17–18: Dotazy s LEFT JOIN a RIGHT JOIN
+-- 22-23: Dotazy s LEFT JOIN a RIGHT JOIN
 SELECT z.jmeno, z.prijmeni, s.nazev FROM zamestnanci z LEFT JOIN skupinovelekce s ON s.trener = CONCAT(z.jmeno, ' ', z.prijmeni);
 SELECT s.nazev, z.jmeno, z.prijmeni FROM zamestnanci z RIGHT JOIN skupinovelekce s ON s.trener = CONCAT(z.jmeno, ' ', z.prijmeni);
 
--- 19: Agregační funkce
+-- 26: Agregační funkce
 SELECT AVG(vek) AS prumerny_vek FROM zamestnanci;
 
--- 20: GROUP BY + HAVING
+-- 29: GROUP BY + HAVING
 SELECT pohlavi, COUNT(*) AS pocet FROM zamestnanci GROUP BY pohlavi HAVING COUNT(*) > 3;
