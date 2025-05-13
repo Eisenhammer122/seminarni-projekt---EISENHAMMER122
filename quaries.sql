@@ -11,12 +11,12 @@ SELECT * FROM zamestnanci WHERE jmeno IN ('Petra', 'Tereza');--vybere vsechny co
 SELECT * FROM zamestnanci WHERE vek = 42;--vybere vsechny komu je 42
 
 -- 11–16: Dotazy s JOIN ON
-SELECT f.jmeno, f.prijmeni, s.nazev FROM fitkari f JOIN skupinovelekce s ON f.skupinovelekce_id = s.id;
-SELECT f.jmeno, f.prijmeni, b.druh FROM fitkari f JOIN bojovesporty b ON f.bojovesporty_id = b.id;
-SELECT b.druh, z.jmeno, z.prijmeni FROM bojovesporty b JOIN zamestnanci z ON b.trener = CONCAT(z.jmeno, ' ', z.prijmeni);
-SELECT s.nazev, z.jmeno, z.prijmeni FROM skupinovelekce s JOIN zamestnanci z ON s.trener = CONCAT(z.jmeno, ' ', z.prijmeni);
-SELECT f.jmeno AS fitkar, b.trener FROM fitkari f JOIN bojovesporty b ON f.bojovesporty_id = b.id;
-SELECT f.jmeno, f.prijmeni, s.nazev, s.trener FROM fitkari f JOIN skupinovelekce s ON f.skupinovelekce_id = s.id;
+SELECT f.jmeno, f.prijmeni, s.nazev FROM fitkari f JOIN skupinovelekce s ON f.skupinovelekce_id = s.id;-- Vybere jméno a příjmení fitkaře a název skupinové lekce, na kterou chodí
+SELECT f.jmeno, f.prijmeni, b.druh FROM fitkari f JOIN bojovesporty b ON f.bojovesporty_id = b.id;-- Vybere jméno a příjmení fitkaře a druh bojového sportu, kterému se věnuje
+SELECT b.druh, z.jmeno, z.prijmeni FROM bojovesporty b JOIN zamestnanci z ON b.trener = CONCAT(z.jmeno, ' ', z.prijmeni);-- Vybere druh bojového sportu a jméno + příjmení trenéra, který ho vede
+SELECT s.nazev, z.jmeno, z.prijmeni FROM skupinovelekce s JOIN zamestnanci z ON s.trener = CONCAT(z.jmeno, ' ', z.prijmeni);-- Vybere název skupinové lekce a jméno + příjmení trenéra, který ji vede
+SELECT f.jmeno AS fitkar, b.trener FROM fitkari f JOIN bojovesporty b ON f.bojovesporty_id = b.id;-- Vybere jméno fitkaře a jméno trenéra bojového sportu, kterému se fitkař věnuje
+SELECT f.jmeno, f.prijmeni, s.nazev, s.trener FROM fitkari f JOIN skupinovelekce s ON f.skupinovelekce_id = s.id;-- Vybere jméno a příjmení fitkaře, název skupinové lekce a jméno trenéra této lekce
 
 -- 17–18: Dotazy s LEFT JOIN a RIGHT JOIN
 SELECT z.jmeno, z.prijmeni, s.nazev FROM zamestnanci z LEFT JOIN skupinovelekce s ON s.trener = CONCAT(z.jmeno, ' ', z.prijmeni);
