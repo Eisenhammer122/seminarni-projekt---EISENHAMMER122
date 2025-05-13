@@ -23,7 +23,7 @@ SELECT z.jmeno, z.prijmeni, s.nazev FROM zamestnanci z LEFT JOIN skupinovelekce 
 SELECT s.nazev, z.jmeno, z.prijmeni FROM zamestnanci z RIGHT JOIN skupinovelekce s ON s.trener = CONCAT(z.jmeno, ' ', z.prijmeni);
 
 -- 26: Agregační funkce
-SELECT AVG(vek) AS prumerny_vek FROM zamestnanci;
+SELECT AVG(vek) AS prumerny_vek FROM zamestnanci; --vybere prumerny vek zamestnance
 
 -- 29: GROUP BY + HAVING
 SELECT pohlavi, COUNT(*) AS pocet FROM zamestnanci GROUP BY pohlavi HAVING COUNT(*) > 3;
