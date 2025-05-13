@@ -19,11 +19,12 @@ SELECT f.jmeno AS fitkar, b.trener FROM fitkari f JOIN bojovesporty b ON f.bojov
 SELECT f.jmeno, f.prijmeni, s.nazev, s.trener FROM fitkari f JOIN skupinovelekce s ON f.skupinovelekce_id = s.id; -- vybere jmeno a prijmeni fitkare, nazev skupinove lekce a jmeno trenera teto lekce
 
 -- 22-23: Dotazy s LEFT JOIN a RIGHT JOIN
-SELECT z.jmeno, z.prijmeni, s.nazev FROM zamestnanci z LEFT JOIN skupinovelekce s ON s.trener = CONCAT(z.jmeno, ' ', z.prijmeni);
-SELECT s.nazev, z.jmeno, z.prijmeni FROM zamestnanci z RIGHT JOIN skupinovelekce s ON s.trener = CONCAT(z.jmeno, ' ', z.prijmeni);
+SELECT z.jmeno, z.prijmeni, s.nazev FROM zamestnanci z LEFT JOIN skupinovelekce s ON s.trener = CONCAT(z.jmeno, ' ', z.prijmeni); -- vybere jmeno a prijmeni kazdeho zamestnance a nazev skupinove lekce, pokud nejakou trenuje
+SELECT s.nazev, z.jmeno, z.prijmeni FROM zamestnanci z RIGHT JOIN skupinovelekce s ON s.trener = CONCAT(z.jmeno, ' ', z.prijmeni); -- vybere nazev kazde skupinove lekce a jmeno + prijmeni trenera, pokud existuje
 
 -- 26: Agregační funkce
 SELECT AVG(vek) AS prumerny_vek FROM zamestnanci; --vybere prumerny vek zamestnance
 
 -- 29: GROUP BY + HAVING
-SELECT pohlavi, COUNT(*) AS pocet FROM zamestnanci GROUP BY pohlavi HAVING COUNT(*) > 3;
+SELECT pohlavi, COUNT(*) AS pocet FROM zamestnanci GROUP BY pohlavi HAVING COUNT(*) > 3; -- vybere pohlavi a pocet zamestnancu tohoto pohlavi, ale pouze pokud je jich vice nez 3
+
