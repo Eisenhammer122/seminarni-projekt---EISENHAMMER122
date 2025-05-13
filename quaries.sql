@@ -1,14 +1,14 @@
 -- 1–10: Dotazy s WHERE
-SELECT * FROM zamestnanci WHERE vek > 40;
-SELECT * FROM zamestnanci WHERE pohlavi = 'F';
-SELECT * FROM zamestnanci WHERE jmeno = 'Tomáš';
-SELECT * FROM zamestnanci WHERE vek BETWEEN 30 AND 40;
-SELECT * FROM zamestnanci WHERE jmeno LIKE 'P%';
-SELECT * FROM zamestnanci WHERE pohlavi = 'M' AND vek < 45;
-SELECT * FROM zamestnanci WHERE prijmeni LIKE '%ová%';
-SELECT * FROM zamestnanci WHERE pohlavi != 'F';
-SELECT * FROM zamestnanci WHERE jmeno IN ('Petra', 'Tereza');
-SELECT * FROM zamestnanci WHERE vek = 42;
+SELECT * FROM zamestnanci WHERE vek > 40; --vybere vsechny zamestnance s vekem vetsim nez 40
+SELECT * FROM zamestnanci WHERE pohlavi = 'F'; --vybere vsechny zamestnance zeny
+SELECT * FROM zamestnanci WHERE jmeno = 'Tomáš'; --vybere vsechny tomase
+SELECT * FROM zamestnanci WHERE vek BETWEEN 30 AND 40;--vybere vsechny mezi vekem 30-40
+SELECT * FROM zamestnanci WHERE jmeno LIKE 'P%';--vybere jmena co zacinaji na pismeno: P
+SELECT * FROM zamestnanci WHERE pohlavi = 'M' AND vek < 45;--vybere muze co jsou mladsi nez 45
+SELECT * FROM zamestnanci WHERE prijmeni LIKE '%ová%';--vybere vsechny kdo ma ve prijmeni ová
+SELECT * FROM zamestnanci WHERE pohlavi != 'F';--vybere vsechny pohlavi krome F
+SELECT * FROM zamestnanci WHERE jmeno IN ('Petra', 'Tereza');--vybere vsechny co maj ve jmene Petra,Tereza
+SELECT * FROM zamestnanci WHERE vek = 42;--vybere vsechny komu je 42
 
 -- 11–16: Dotazy s JOIN ON
 SELECT f.jmeno, f.prijmeni, s.nazev FROM fitkari f JOIN skupinovelekce s ON f.skupinovelekce_id = s.id;
